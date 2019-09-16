@@ -1,0 +1,13 @@
+#!/bin/bash
+
+S3_ENDPOINT=http://localstack:4572
+BUCKET_NAME=examples-bucket
+
+#docker-compose exec awscli aws s3api list-objects \
+#    --bucket ${BUCKET_NAME} \
+#    --endpoint-url ${S3_ENDPOINT}
+
+docker-compose exec awscli aws s3 ls \
+    --recursive \
+    s3://${BUCKET_NAME}/ \
+    --endpoint-url ${S3_ENDPOINT}

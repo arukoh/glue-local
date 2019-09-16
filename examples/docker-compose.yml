@@ -1,0 +1,24 @@
+version: "3.3"
+
+services:
+  glue-local:
+    container_name: glue-local
+    image: arukoh/glue-local
+    command: ["tail", "-f", "/dev/null"]
+    volumes:
+      - ./conf:/aws-glue-libs/conf
+      - ./src:/aws-glue-libs/src
+    working_dir: /aws-glue-libs
+
+  awscli:
+    container_name: awscli
+    build: .
+    command: ["tail", "-f", "/dev/null"]
+
+  localstack:
+    container_name: localstack
+    image: localstack/localstack
+    environment:
+      - DOCKER_HOST=unix:///var/run/docker.sock
+      - DEFAULT_REGION=ap-northeast-1
+      - SERVICES=dynamodb,s3
