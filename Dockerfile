@@ -1,1 +1,1 @@
-Dockerfile.spark22
+Dockerfile.spark24

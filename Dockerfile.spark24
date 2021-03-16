@@ -1,8 +1,8 @@
 FROM python:3.7-alpine
 
 ENV SPARK_HOME /spark
-ENV SPARK_VERSION 2.4.4
-ENV HADOOP_VERSION 2.7
+ENV SPARK_VERSION 2.4.3
+ENV HADOOP_VERSION 2.8
 
 # Install OpenJDK
 RUN apk add --update \
