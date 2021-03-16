@@ -14,8 +14,8 @@ RUN apk add --update \
   && rm -rf /var/cache/apk/*
 
 # Install Spark
-#RUN wget -q http://apache.mirror.iphh.net/spark/spark-${SPARK_VERSION}/spark-${SPARK_VERSION}-bin-hadoop${HADOOP_VERSION}.tgz \
-RUN wget -q https://archive.apache.org/dist/spark/spark-${SPARK_VERSION}/spark-${SPARK_VERSION}-bin-hadoop${HADOOP_VERSION}.tgz \
+# RUN wget -q https://archive.apache.org/dist/spark/spark-${SPARK_VERSION}/spark-${SPARK_VERSION}-bin-hadoop${HADOOP_VERSION}.tgz \
+RUN wget -q https://aws-glue-etl-artifacts.s3.amazonaws.com/glue-0.9/${SPARK_VERSION}-bin-hadoop${HADOOP_VERSION}.tgz \
   && tar xzf spark-${SPARK_VERSION}-bin-hadoop${HADOOP_VERSION}.tgz \
   && mv spark-${SPARK_VERSION}-bin-hadoop${HADOOP_VERSION} ${SPARK_HOME} \
   && rm spark-${SPARK_VERSION}-bin-hadoop${HADOOP_VERSION}.tgz

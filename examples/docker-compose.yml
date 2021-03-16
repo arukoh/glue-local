@@ -3,7 +3,7 @@ version: "3.3"
 services:
   glue-local:
     container_name: glue-local
-    image: arukoh/glue-locaul:spark22
+    image: arukoh/glue-local
     command: ["tail", "-f", "/dev/null"]
     volumes:
       - ./conf:/aws-glue-libs/conf
